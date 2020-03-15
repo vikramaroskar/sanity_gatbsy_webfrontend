@@ -37,7 +37,8 @@ const IndexPage = ({ data }) => (
     <ul style={{listStyle:'none', display:'flex', alignItems:'space-between', padding: 0}}>
       {data.allSanityProject.edges.map(({ node: project }) => (
       <li key={project.slug.current} style={{flex: '1 45%', flexWrap:'wrap', maxWidth:'45%', margin: '1rem'}}>
-        <h2 style={{fontSize:'24px'}}>{project.title}</h2>
+        <h2 style={{fontSize:'24px'}}>
+      <Link to={project.slug.current}> {project.title}</Link></h2>
         <Image fluid={project.image.asset.fluid} alt={project.title} />
         <p style={{margin: '1rem'}}> {project.description}</p>
       </li>
